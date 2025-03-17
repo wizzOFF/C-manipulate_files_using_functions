@@ -12,6 +12,8 @@ int main(int argc, char *argv[])
     if (fichier != NULL)
     {
         // On peut lire et écrire dans le fichier
+        
+        fclose(fichier); // On ferme le fichier qui a été ouvert
     }
     else
     {
