@@ -54,6 +54,14 @@ int main(int argc, char *argv[])
     if (fichier != NULL)
     {
         fputs("Salut les développeurs\nBienvenue sur OpenClassrooms !", fichier);
+        
+        // On demande l'âge
+        printf("Quel age avez-vous ? ");
+        scanf("%d", &age);
+ 
+        // On l'écrit dans le fichier
+        fprintf(fichier, "Le Monsieur qui utilise le programme, il a %d ans", age);
+        
         fclose(fichier);
     }
  
