@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 */
-
+/*
 int fputc(int caractere, FILE* pointeurSurFichier);
 
 int main(int argc, char *argv[])
@@ -36,6 +36,24 @@ int main(int argc, char *argv[])
     if (fichier != NULL)
     {
         fputc('A', fichier); // Écriture du caractère A
+        fclose(fichier);
+    }
+ 
+    return 0;
+}
+*/
+
+char* fputs(const char* chaine, FILE* pointeurSurFichier);
+
+int main(int argc, char *argv[])
+{
+    FILE* fichier = NULL;
+ 
+    fichier = fopen("test.txt", "w");
+ 
+    if (fichier != NULL)
+    {
+        fputs("Salut les développeurs\nBienvenue sur OpenClassrooms !", fichier);
         fclose(fichier);
     }
  
