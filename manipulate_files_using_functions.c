@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+/*
 FILE* fopen(const char* nomDuFichier, const char* modeOuverture);
 
 int main(int argc, char *argv[])
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     if (fichier != NULL)
     {
         // On peut lire et écrire dans le fichier
-        
+
         fclose(fichier); // On ferme le fichier qui a été ouvert
     }
     else
@@ -21,5 +21,23 @@ int main(int argc, char *argv[])
         printf("Impossible d'ouvrir le fichier test.txt");
     }
     
+    return 0;
+}
+*/
+
+int fputc(int caractere, FILE* pointeurSurFichier);
+
+int main(int argc, char *argv[])
+{
+    FILE* fichier = NULL;
+ 
+    fichier = fopen("test.txt", "w");
+ 
+    if (fichier != NULL)
+    {
+        fputc('A', fichier); // Écriture du caractère A
+        fclose(fichier);
+    }
+ 
     return 0;
 }
