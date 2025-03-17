@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 */
-
+/*
 char* fputs(const char* chaine, FILE* pointeurSurFichier);
 
 int main(int argc, char *argv[])
@@ -61,7 +61,32 @@ int main(int argc, char *argv[])
  
         // On l'écrit dans le fichier
         fprintf(fichier, "Le Monsieur qui utilise le programme, il a %d ans", age);
-        
+
+        fclose(fichier);
+    }
+ 
+    return 0;
+}
+*/
+
+int fgetc(FILE* pointeurDeFichier);
+
+int main(int argc, char *argv[])
+{
+    FILE* fichier = NULL;
+    int caractereActuel = 0;
+ 
+    fichier = fopen("test.txt", "r");
+ 
+    if (fichier != NULL)
+    {
+        // Boucle de lecture des caractères un à un
+        do
+        {
+            caractereActuel = fgetc(fichier); // On lit le caractère
+            printf("%c", caractereActuel); // On l'affiche
+        } while (caractereActuel != EOF); // On continue tant que fgetc n'a pas retourné EOF (fin de fichier)
+ 
         fclose(fichier);
     }
  
