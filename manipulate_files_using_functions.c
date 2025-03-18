@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 */
-
+/*
 int main(int argc, char *argv[])
 {
     FILE* fichier = NULL;
@@ -132,5 +132,15 @@ int main(int argc, char *argv[])
         fclose(fichier);
     }
  
+    return 0;
+}
+*/
+
+int rename(const char* ancienNom, const char* nouveauNom);
+
+int main(int argc, char *argv[])
+{
+    rename("test.txt", "test_renomme.txt");
+
     return 0;
 }
