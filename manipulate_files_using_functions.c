@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 */
-
+/*
 char* fgets(char* chaine, int nbreDeCaracteresALire, FILE* pointeurSurFichier);
 
 #define TAILLE_MAX 1000 // Tableau de taille 1000
@@ -109,6 +109,25 @@ int main(int argc, char *argv[])
     {
         fgets(chaine, TAILLE_MAX, fichier); // On lit maximum TAILLE_MAX caractères du fichier, on stocke le tout dans "chaine"
         printf("%s", chaine); // On affiche la chaîne
+ 
+        fclose(fichier);
+    }
+ 
+    return 0;
+}
+*/
+
+int main(int argc, char *argv[])
+{
+    FILE* fichier = NULL;
+    int score[3] = {0}; // Tableau des 3 meilleurs scores
+ 
+    fichier = fopen("test.txt", "r");
+ 
+    if (fichier != NULL)
+    {
+        fscanf(fichier, "%d %d %d", &score[0], &score[1], &score[2]);
+        printf("Les meilleurs scores sont : %d, %d et %d", score[0], score[1], score[2]);
  
         fclose(fichier);
     }
